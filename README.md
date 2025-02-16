@@ -1,3 +1,5 @@
+![logo](https://github.com/user-attachments/assets/70ddc336-ded0-43e1-9982-3a26d0740b5a)
+
 # EarlyMed: AI-Powered Stroke Risk Assessment 🏥🧠
 
 ## Overview
