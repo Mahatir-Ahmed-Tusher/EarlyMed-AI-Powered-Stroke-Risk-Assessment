@@ -1,0 +1,8 @@
+As the models are too large
+and GitHub has a strict policy of 
+file size limitation within 100 MB,
+
+that's why the download link of 
+stroke_clf.pkl: https://huggingface.co/spaces/MahatirTusher/EarlyMed-Stroke-Risk-Prediction/blob/main/stroke_clf.pkl
+
+stroke_reg.pkl: https://huggingface.co/spaces/MahatirTusher/EarlyMed-Stroke-Risk-Prediction/blob/main/stroke_reg.pkl
