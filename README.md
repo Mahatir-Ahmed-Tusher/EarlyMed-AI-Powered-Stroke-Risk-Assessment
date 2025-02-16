@@ -84,12 +84,75 @@ The dataset was created using medical literature, expert consultations, and stat
 
 ## 📊 Model Performance & Results
 
-| Model Type            | Accuracy  | Precision | Recall | F1-Score |
-|----------------------|-----------|-----------|--------|----------|
-| Binary Classification | XX%       | XX%       | XX%    | XX%      |
-| Regression (Risk %)   | XX% (R²)  | -         | -      | -        |
+## Regression Performance
 
-(Replace `XX%` with actual results after evaluation)
+### Random Forest (Regression)
+| Metric                    | Value |
+|---------------------------|-------|
+| Mean Absolute Error (MAE) | 2.144 |
+| Root Mean Squared Error (RMSE) | 2.706 |
+| R2 Score                  | 0.964 |
+
+### XGBoost (Regression)
+| Metric                    | Value |
+|---------------------------|-------|
+| Mean Absolute Error (MAE) | 1.076 |
+| Root Mean Squared Error (RMSE) | 1.350 |
+| R2 Score                  | 0.991 |
+
+### Discussion
+- **XGBoost significantly outperforms Random Forest** in regression tasks, with a **lower MAE and RMSE**, indicating that it provides more precise predictions.
+- The **R2 Score for XGBoost is 0.991**, showing that the model explains almost all the variance in stroke risk percentage, compared to **0.964 for Random Forest**.
+
+## Binary Classification Performance
+
+### Random Forest (Binary Classification)
+| Metric      | Value  |
+|------------|--------|
+| Accuracy   | 0.948  |
+| Precision  | 0.954  |
+| Recall     | 0.967  |
+| AUC        | 0.991  |
+
+#### Classification Report
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.94      | 0.91   | 0.92     | 4892    |
+| 1     | 0.95      | 0.97   | 0.96     | 9108    |
+| **Overall** | **0.95** | **0.95** | **0.95** | **14000** |
+
+#### Confusion Matrix
+| Actual \ Predicted | 0   | 1   |
+|--------------------|-----|-----|
+| 0                 | 4465 | 427 |
+| 1                 | 299  | 8809 |
+
+### XGBoost (Binary Classification)
+| Metric      | Value  |
+|------------|--------|
+| Accuracy   | 0.997  |
+| Precision  | 0.997  |
+| Recall     | 0.998  |
+| AUC        | 0.999  |
+
+#### Classification Report
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 1.00      | 0.99   | 1.00     | 4892    |
+| 1     | 1.00      | 1.00   | 1.00     | 9108    |
+| **Overall** | **1.00** | **1.00** | **1.00** | **14000** |
+
+#### Confusion Matrix
+| Actual \ Predicted | 0   | 1   |
+|--------------------|-----|-----|
+| 0                 | 4865 | 27  |
+| 1                 | 15   | 9093 |
+
+### Discussion
+- **XGBoost shows exceptional performance** in binary classification, achieving almost perfect scores across all metrics.
+- Compared to Random Forest, **XGBoost has significantly higher accuracy (0.997 vs 0.948), recall (0.998 vs 0.967), and AUC (0.999 vs 0.991)**.
+- The **confusion matrix for XGBoost is near perfect**, with only **42 misclassifications out of 14,000 predictions**, compared to **726 misclassifications by Random Forest**.
+- **This makes XGBoost the preferred model** for both stroke risk classification and regression tasks.
 
 ---
 
